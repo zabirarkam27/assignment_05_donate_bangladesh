@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Tailwind Css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body class="font-Lexend">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50">
+        <!-- navbar starts -->
+        <div class="bg-[#FFFAE9]/80 backdrop-blur py-3">
+
+            <!-- For small devices -->
+            <div class="md:hidden">
+                <!-- Nav top -->
+                <div class="flex md:hidden justify-between items-center px-4 mt-3 max-w-[1200px] w-11/12 mx-auto">
+                    <!-- Nav left: logo -->
+                    <a href="#" class="flex flex-col items-center space-x-2 hover:cursor-pointer">
+                        <img src="../assets/logo.png" alt="Logo" class="w-10 h-10">
+                        <p class="hover:cursor-pointer">Donate Bangladesh</p>
+                    </a>
+
+                    <!-- Nav Right: available coins -->
+                    <div class="flex items-center gap-2">
+                        <img src="../assets/coin.png" alt="Coins" class="w-8 h-8">
+                        <div class="text-center">
+                            <p>5500</p>
+                            <p>BDT</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nav bottom: Blog Btn -->
+                <div class="navbar-start mt-5 flex justify-between items-center max-w-[1200px] w-11/12 mx-auto">
+                    <a href="../index.html" class="btn bg-primary border-primary md:text-lg lg:text-xl w-full text-center">Home</a>
+                </div>
+            </div>
+
+            <!-- For large devices -->
+            <div class="hidden md:block">
+                <div class="max-w-[1200px] w-11/12 mx-auto navbar mt-3 pb-5 font-semibold text-secondary">
+                    <!-- Nav Left: Blog Button -->
+                    <div class="navbar-start">
+                        <a href="../index.html" class="btn text-xl bg-primary border-primary">Home</a>
+                    </div>
+
+                    <!-- Nav Center: logo -->
+                    <div class="navbar-center lg:flex">
+                        <div class="flex items-center justify-center">
+                            <a href="#" class="flex items-center space-x-5 hover:cursor-pointer text-xl h-20">
+                                <img src="../assets/logo.png" class="hover:cursor-pointer">
+                                <p class="hover:cursor-pointer">Donate Bangladesh</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Nav Right: available coins -->
+                    <div class="navbar-end">
+                        <div class="flex items-center justify-center gap-3 text-textColor text-xl font-medium">
+                            <img src="../assets/coin.png" alt="">
+                            <p>5500</p>
+                            <p>BDT</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-[1200px] w-8/12 mt-6 mx-auto">
+        <!-- Accordion -->
+        <div class="border border-gray-200 rounded-xl">
+            <div class="collapse collapse-arrow border-b rounded-none">
+                <input type="radio" name="my-accordion-2" checked="checked" />
+                <div class="collapse-title text-xl font-medium">What is the Document Objet Model (DOM)?</div>
+                <div class="collapse-content">
+                    <p class="text-textColor text-justify pr-6 md:pr-10">The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of an HTML or XML document as a tree of objects, where each element, attribute, and piece of content is a node. The DOM allows
+                        developers to access, modify, and manipulate a webpage’s structure, style, and content dynamically using JavaScript, enabling interactive and dynamic web experiences.</p>
+                </div>
+            </div>
+            <div class="collapse collapse-arrow border-b rounded-none">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-xl font-medium">How do you select an element from the DOM?</div>
+                <div class="collapse-content">
+                    <p class="text-textColor text-justify pr-6 md:pr-10">
+                        To select an element from the DOM, you can use JavaScript methods like document.getElementById() to select an element by its ID, document.querySelector() to select the first element matching a CSS selector, or document.querySelectorAll() to select all
+                        elements matching a CSS selector. Other methods include document.getElementsByClassName() for selecting elements by class and document.getElementsByTagName() for selecting elements by tag name. These methods allow you to manipulate
+                        or interact with the selected elements programmatically.</p>
+                </div>
+            </div>
+            <div class="collapse collapse-arrow border-b rounded-none">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why is it useful?</div>
+                <div class="collapse-content">
+                    <p class="text-textColor text-justify pr-6 md:pr-10">Event delegation is a technique in the DOM where a single event listener is added to a parent element to manage events on its child elements, even those added dynamically. This works because events bubble up from the target element
+                        to its ancestors. It is useful as it improves performance by reducing the number of event listeners, simplifies code, and ensures event handling works for dynamically added elements. For example, instead of adding a click listener
+                        to every button in a list, you attach it to the list container and check the event target.</p>
+                </div>
+            </div>
+            <div class="collapse collapse-arrow border-b rounded-none">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles using the DOM?</div>
+                <div class="collapse-content">
+                    <p class="text-textColor text-justify pr-6 md:pr-10">
+                        To manipulate an element's attributes and styles using the DOM, you can use JavaScript. For attributes, use methods like setAttribute(), getAttribute(), and removeAttribute(), or directly modify properties such as element.id or element.href. For styles,
+                        access the style property of an element and assign values, e.g., element.style.color = "red" or element.style.fontSize = "16px". You can also manipulate classes using methods like classList.add(), classList.remove(), or classList.toggle()
+                        to dynamically change the element's appearance.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Linked JS files -->
+    <script src="../js/app.js "></script>
+    <script src="../js/tailwind.config.js "></script>
+</body>
+
+</html>
