@@ -22,3 +22,9 @@ function getInputFieldValueById(id) {
 function getInnerTextById(id) {
     return parseFloat(document.getElementById(id).innerText);
 }
+
+// function for modal
+function handleModal() {
+    const modal = document.getElementById("my_modal_5");
+    modal.showModal();
+}

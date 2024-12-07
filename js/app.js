@@ -11,33 +11,28 @@ function handleDonation(inputID, donationAmountID) {
     const availableBalance = getInnerTextById("small-available-balance");
     const totalDonation = getInnerTextById(donationAmountID);
     const donationInput = getInputFieldValueById(inputID);
-
+    
     document.getElementById(inputID).value = "";
-
+    
     if (isNaN(donationInput) || donationInput <= 0) {
         alert("Please enter a valid amount!");
-        return;
+        return false;
     }
-
+    
     if (availableBalance < donationInput) {
         alert("Insufficient balance");
-        return;
+        return false;
     }
 
     const newAvailableBalance = availableBalance - donationInput;
     const newTotalDonation = totalDonation + donationInput;
 
-
     document.getElementById("small-available-balance").innerText =
-        newAvailableBalance;
+    newAvailableBalance;
     document.getElementById("large-available-balance").innerText =
-        newAvailableBalance;
+    newAvailableBalance;
     document.getElementById(donationAmountID).innerText = newTotalDonation;
-
-
-    if (
-        isNaN(donationInput) || donationInput <= 0 || availableBalance < donationInput
-    ) {
-        return;
-    }
+    
+    return true;
 }
+
