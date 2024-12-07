@@ -23,8 +23,25 @@ function getInnerTextById(id) {
     return parseFloat(document.getElementById(id).innerText);
 }
 
+function getHeaderTextById(id) {
+    return (document.getElementById(id).innerText);
+}
+
 // function for modal
 function handleModal() {
     const modal = document.getElementById("my_modal_5");
     modal.showModal();
 }
+
+// function for creating history
+function donationHistory(donationInput, donationHeading, currentDate) {
+  const div = document.createElement("div");
+  div.innerHTML = `<div class="border border-gray-100 rounded-xl px-4 py-6 my-6 md:px-8 md:py-10 space-y-2">
+        <h3 class="text-xl font-bold">${donationInput} Taka is Donated for flood-2024 at ${donationHeading}</h3>
+        <p class="text-textColor text-lg">Date: ${currentDate}</p>
+        </div>`;
+
+  return div;
+}
+
+
