@@ -38,7 +38,7 @@
                     <div class="flex items-center gap-2">
                         <img src="./assets/coin.png" alt="Coins" class="w-8 h-8">
                         <div class="text-center">
-                            <p>5500</p>
+                            <p id="small-available-balance" class="available-balance">5500</p>
                             <p>BDT</p>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                     <div class="navbar-end">
                         <div class="flex items-center justify-center gap-3 text-textColor text-xl font-medium">
                             <img src="./assets/coin.png" alt="">
-                            <p>5500</p>
+                            <p id="large-available-balance" class="available-balance">5500</p>
                             <p>BDT</p>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                         <div class="flex items-center gap-2 bg-gray-100 w-[120px] p-3 justify-center rounded-lg">
                             <img src="./assets/coin.png" alt="Coins" class="w-6 h-6">
                             <div class="flex items-centertext-center gap-2">
-                                <p>0</p>
+                                <p id="noakhali-donation-amount" class="total-donation">0</p>
                                 <p>BDT</p>
                             </div>
                         </div>
@@ -112,9 +112,10 @@
                             The recent floods in Noakhali have caused extensive damage to homes and infrastructure, leaving many in urgent need of assistance. Your donation can provide vital supplies to support those affected by this disaster. Every contribution, no matter the size,
                             makes a meaningful difference. Join us in bringing relief and hope to those in need during this challenging time.
                         </p>
-                        <input type="text" placeholder="Write Donation Amount" class="input border border-gray-100 w-full max-w-[522px]" />
+                        <input id="donate-noakhali" type="text" placeholder="Write Donation Amount" class="donation-amount input border border-gray-100 w-full max-w-[522px]" />
                         <div class="card-actions">
-                            <button onclick="my_modal_5.showModal()" class="btn bg-primary border-primary w-full max-w-[522px]">Donate Now</button>
+                            <button id="btn-donate-noakhali" class="btn donate-btn bg-primary border-primary w-full max-w-[522px]"
+                            onclick="my_modal_5.showModal()">Donate Now</button>
                         </div>
                     </div>
                 </div>
@@ -128,7 +129,7 @@
                         <div class="flex items-center gap-2 bg-gray-100 w-[120px] p-3 justify-center rounded-lg ">
                             <img src="./assets/coin.png " alt="Coins " class="w-6 h-6 ">
                             <div class="flex items-centertext-center gap-2 ">
-                                <p>0</p>
+                                <p id="feni-donation-amount" class="total-donation">0</p>
                                 <p>BDT</p>
                             </div>
                         </div>
@@ -138,9 +139,9 @@
                             bring hope and relief to families facing this crisis and help them rebuild their lives. Every donation, big or small, plays a vital role in making a meaningful impact. Join us today in supporting those in urgent need and making
                             a difference.
                         </p>
-                        <input type="text " placeholder="Write Donation Amount " class="input border border-gray-100 w-full max-w-[522px] " />
+                        <input id="donate-feni" type="text " placeholder="Write Donation Amount " class="donation-amount input border border-gray-100 w-full max-w-[522px] " />
                         <div class="card-actions ">
-                            <button onclick="my_modal_5.showModal()" class="btn bg-primary border-primary w-full max-w-[522px] ">Donate Now</button>
+                            <button id="btn-donate-feni"  class="btn donate-btn bg-primary border-primary w-full max-w-[522px] ">Donate Now</button>
                         </div>
                     </div>
                 </div>
@@ -154,7 +155,7 @@
                         <div class="flex items-center gap-2 bg-gray-100 w-[120px] p-3 justify-center rounded-lg ">
                             <img src="./assets/coin.png " alt="Coins " class="w-6 h-6 ">
                             <div class="flex items-centertext-center gap-2 ">
-                                <p>0</p>
+                                <p id="injured-donation-amount" class="total-donation">0</p>
                                 <p>BDT</p>
                             </div>
                         </div>
@@ -164,16 +165,16 @@
                             that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation
                             to support these brave individuals in their time of need.
                         </p>
-                        <input type="text " placeholder="Write Donation Amount " class="input border border-gray-100 w-full max-w-[522px] " />
+                        <input id="donate-injured" type="text " placeholder="Write Donation Amount" class="donation-amount input border border-gray-100 w-full max-w-[522px] " />
                         <div class="card-actions ">
-                            <button onclick="my_modal_5.showModal()" class="btn bg-primary border-primary w-full max-w-[522px]">Donate Now</button>
+                            <button id="btn-donate-injured"  class="btn donate-btn bg-primary border-primary w-full max-w-[522px]">Donate Now</button>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- MODAL -->
-            <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            <dialog id="my_modal_5" class="modal">
                 <div class="modal-box space-y-3 flex flex-col items-center justify-center text-center">
                     <h3 class=" text-3xl font-bold ">Congrates!</h3>
                     <img src="./assets/coin.png ">
@@ -197,9 +198,10 @@
     </main>
 
     <!-- Linked JS files -->
-    <script src="../js/app.js "></script>
-    <script src="../js/tailwind.config.js "></script>
-
+    <script src="./js/utilities.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/features.js"></script>
+    <script src="./js/tailwind.config.js"></script>
 </body>
 
 </html>

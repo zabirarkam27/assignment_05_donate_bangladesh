@@ -1,29 +1,43 @@
 const btnDonation = document.getElementById("btn-donation");
 const btnHistory = document.getElementById("btn-history");
+const btnDonateNoakhali = document.getElementById("btn-donate-noakhali");
+const btnDonateFeni = document.getElementById("btn-donate-feni");
+const btnDonateInjured = document.getElementById("btn-donate-injured");
+
 const historyPage = document.getElementById("history-page");
 const donationPage = document.getElementById("donation-page");
 
+function handleDonation(inputID, donationAmountID) {
+    const availableBalance = getInnerTextById("small-available-balance");
+    const totalDonation = getInnerTextById(donationAmountID);
+    const donationInput = getInputFieldValueById(inputID);
 
-// Function for Changing Active btn style
-function setActiveBtn(activeBtn, inactiveBtn) {
-    activeBtn.classList.add("bg-primary", "border-primary");
-    activeBtn.classList.remove("bg-white", "text-textColor");
+    document.getElementById(inputID).value = "";
 
-    inactiveBtn.classList.remove("bg-primary", "border-primary");
-    inactiveBtn.classList.add("bg-white", "text-textColor");
+    if (isNaN(donationInput) || donationInput <= 0) {
+        alert("Please enter a valid amount!");
+        return;
+    }
+
+    if (availableBalance < donationInput) {
+        alert("Insufficient balance");
+        return;
+    }
+
+    const newAvailableBalance = availableBalance - donationInput;
+    const newTotalDonation = totalDonation + donationInput;
+
+
+    document.getElementById("small-available-balance").innerText =
+        newAvailableBalance;
+    document.getElementById("large-available-balance").innerText =
+        newAvailableBalance;
+    document.getElementById(donationAmountID).innerText = newTotalDonation;
+
+
+    if (
+        isNaN(donationInput) || donationInput <= 0 || availableBalance < donationInput
+    ) {
+        return;
+    }
 }
-
-// Function for toggle pages
-function togglePages(activePage, hiddenPage) {
-    activePage.classList.remove("hidden");
-    hiddenPage.classList.add("hidden");
-}
-
-btnDonation.addEventListener("click", function() {
-    setActiveBtn(btnDonation, btnHistory);
-    togglePages(donationPage, historyPage);
-})
-btnHistory.addEventListener("click", function() {
-    setActiveBtn(btnHistory, btnDonation);
-    togglePages(historyPage, donationPage);
-})
